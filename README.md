@@ -1,4 +1,4 @@
-Like req.redirect but overrides the redirect if "_redirect" is available in req.body, req.query or req.session.
+Like res.redirect but overrides the redirect if "_redirect" is available in req.body, req.query or req.session.
 
 Think of it as a flash message but for redirects.
 
@@ -14,5 +14,6 @@ var redir = require('express-redir');
 // ...
 
 // this should be at the top
+// monkey patches res to offer res.redir()
 app.use(redir);
 ```
